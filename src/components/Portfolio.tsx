@@ -11,7 +11,6 @@ import {
 	Github,
 	Linkedin
 } from 'lucide-react'
-import ConditionalPanel from './ConditionalPanel'
 import portfolioConfig from '../utils/config'
 
 // Icon mapping
@@ -35,15 +34,12 @@ const Portfolio = () => {
 			setIsMobile(window.innerWidth < 1024)
 		}
 
-		// Initial mobile check
 		checkMobile()
 		window.addEventListener('resize', checkMobile)
 
-		// Set initial active section based on URL hash
 		const hash = window.location.hash.slice(1) || 'home'
 		setActiveSection(hash)
 
-		// Listen for hash changes
 		const handleHashChange = () => {
 			const newHash = window.location.hash.slice(1) || 'home'
 			setActiveSection(newHash)
@@ -65,19 +61,16 @@ const Portfolio = () => {
 		window.location.hash = id
 	}
 
-	// Process nav items to include actual icon components
 	const navItems = portfolioConfig.navigation.items.map((item) => ({
 		...item,
 		icon: iconMap[item.icon as keyof typeof iconMap]
 	}))
 
-	// Process social links to include actual icon components
 	const socialLinks = portfolioConfig.socialLinks.map((link) => ({
 		...link,
 		icon: iconMap[link.icon as keyof typeof iconMap]
 	}))
 
-	// Helper function to format achievement text with highlights
 	const formatAchievement = (achievement: { text: string; highlights?: string[] }) => {
 		if (!achievement.highlights) return achievement.text
 

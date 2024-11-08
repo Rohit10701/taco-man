@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* globals.css */
+.bg-dark-green {
+  background-color: #022c22;
+}
