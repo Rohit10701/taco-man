@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import portfolioConfig from '@/utils/config'
-import { iconMap } from '@/components/Portfolio'
 import { useRouter, usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
